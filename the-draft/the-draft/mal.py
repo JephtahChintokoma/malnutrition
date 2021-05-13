@@ -1,8 +1,10 @@
-from pyknow import *
-import os
+# from pyknow import *
+from experta import *
+# from flask import Flask
+# import os
+# app = Flask(__name__)
 
-print(os.getcwd())
-
+# print(os.getcwd())
 diseases_list = []
 diseases_symptoms = []
 symptom_map = {}
@@ -124,7 +126,7 @@ class Greetings(KnowledgeEngine):
 	@Rule(Fact(action='find_disease'), NOT(Fact(apathetic=W())),salience = 1)
 	def symptom_6(self):
 		self.declare(Fact(apathetic=input("child is apathetic: ")))
-	 
+	
 	@Rule(Fact(action='find_disease'), NOT(Fact(smaller_muscles=W())),salience = 1)
 	def symptom_7(self):
 		self.declare(Fact(smaller_muscles=input("smaller muscles: ")))
@@ -177,15 +179,15 @@ class Greetings(KnowledgeEngine):
 	def symptom_19(self):
 		self.declare(Fact(age=input("Is age below 2 years: ")))		
 
-	@Rule(Fact(action='find_disease'),Fact(slight_hair="yes"),Fact(reddish_hair="yes"),Fact(hair_falling="yes"),Fact(abnormal_skin="yes"),Fact(swollen_face="yes"),Fact(glazed_eyes="yes"),Fact(apathetic="yes"),Fact(smaller_muscles="yes"),Fact(anaemic="yes"),Fact(diarrhoea="no"),Fact(bloated_stomach="yes"),Fact(thin_body="no"),Fact(older_face="no"),Fact(child_cranky="no"),Fact(wrinkled_skin="no"),Fact(little_fattie_tissue="no"),Fact(converse_stomach_rib_prominent="no"),Fact(chronic_infections="no"),Fact(skin_reddish_purging="no"))
+	@Rule(Fact(action='find_disease'),Fact(slight_hair="yes"),Fact(reddish_hair="yes"),Fact(hair_falling="yes"),Fact(abnormal_skin="yes"),Fact(swollen_face="yes"),Fact(glazed_eyes="yes"),Fact(apathetic="yes"),Fact(smaller_muscles="yes"),Fact(anaemic="yes"),Fact(diarrhoea="no"),Fact(bloated_stomach="yes"),Fact(thin_body="no"),Fact(older_face="no"),Fact(child_cranky="no"),Fact(wrinkled_skin="no"),Fact(little_fattie_tissue="no"),Fact(converse_stomach_rib_prominent="no"),Fact(chronic_infections="no"),Fact(skin_reddish_purging="no"),Fact(age="no"))
 	def disease_0(self):
 		self.declare(Fact(disease="Kwashiorkor"))
 
-	@Rule(Fact(action='find_disease'),Fact(slight_hair="no"),Fact(reddish_hair="no"),Fact(hair_falling="no"),Fact(abnormal_skin="yes"),Fact(swollen_face="no"),Fact(glazed_eyes="no"),Fact(apathetic="no"),Fact(smaller_muscles="yes"),Fact(anaemic="yes"),Fact(diarrhoea="yes"),Fact(bloated_stomach="no"),Fact(thin_body="yes"),Fact(older_face="yes"),Fact(child_cranky="yes"),Fact(wrinkled_skin="yes"),Fact(little_fattie_tissue="yes"),Fact(converse_stomach_rib_prominent="yes"),Fact(chronic_infections="yes"),Fact(skin_reddish_purging="yes"))
+	@Rule(Fact(action='find_disease'),Fact(slight_hair="no"),Fact(reddish_hair="no"),Fact(hair_falling="no"),Fact(abnormal_skin="yes"),Fact(swollen_face="no"),Fact(glazed_eyes="no"),Fact(apathetic="no"),Fact(smaller_muscles="yes"),Fact(anaemic="yes"),Fact(diarrhoea="yes"),Fact(bloated_stomach="no"),Fact(thin_body="yes"),Fact(older_face="yes"),Fact(child_cranky="yes"),Fact(wrinkled_skin="yes"),Fact(little_fattie_tissue="yes"),Fact(converse_stomach_rib_prominent="yes"),Fact(chronic_infections="yes"),Fact(skin_reddish_purging="yes"),Fact(age="no"))
 	def disease_1(self):
 		self.declare(Fact(disease="Marasmus"))
 
-	@Rule(Fact(action='find_disease'),Fact(slight_hair="no"),Fact(reddish_hair="no"),Fact(hair_falling="no"),Fact(abnormal_skin="yes"),Fact(swollen_face="no"),Fact(glazed_eyes="no"),Fact(apathetic="no"),Fact(smaller_muscles="yes"),Fact(anaemic="yes"),Fact(diarrhoea="yes"),Fact(bloated_stomach="no"),Fact(thin_body="yes"),Fact(older_face="no"),Fact(child_cranky="no"),Fact(wrinkled_skin="yes"),Fact(little_fattie_tissue="yes"),Fact(converse_stomach_rib_prominent="yes"),Fact(chronic_infections="yes"),Fact(skin_reddish_purging="yes"))
+	@Rule(Fact(action='find_disease'),Fact(slight_hair="yes"),Fact(reddish_hair="yes"),Fact(hair_falling="yes"),Fact(abnormal_skin="yes"),Fact(swollen_face="yes"),Fact(glazed_eyes="yes"),Fact(apathetic="yes"),Fact(smaller_muscles="yes"),Fact(anaemic="yes"),Fact(diarrhoea="yes"),Fact(bloated_stomach="yes"),Fact(thin_body="yes"),Fact(older_face="yes"),Fact(child_cranky="yes"),Fact(wrinkled_skin="yes"),Fact(little_fattie_tissue="yes"),Fact(converse_stomach_rib_prominent="yes"),Fact(chronic_infections="yes"),Fact(skin_reddish_purging="yes"),Fact(age="no"))
 	def disease_2(self):
 		self.declare(Fact(disease="Marasmus-Kwashiorkor"))	
 
@@ -195,12 +197,12 @@ class Greetings(KnowledgeEngine):
 
 	
 	@Rule(Fact(action='find_disease'),Fact(slight_hair="no"),Fact(reddish_hair="no"),Fact(hair_falling="no"),Fact(abnormal_skin="yes"),Fact(swollen_face="no"),Fact(glazed_eyes="no"),Fact(apathetic="no"),Fact(smaller_muscles="yes"),Fact(anaemic="yes"),Fact(diarrhoea="yes"),Fact(bloated_stomach="no"),Fact(thin_body="yes"),Fact(older_face="yes"),Fact(child_cranky="yes"),Fact(wrinkled_skin="yes"),Fact(little_fattie_tissue="yes"),Fact(converse_stomach_rib_prominent="yes"),Fact(chronic_infections="yes"),Fact(skin_reddish_purging="yes"),Fact(age="yes"))
-	def disease_5(self):
+	def disease_4(self):
 		self.declare(Fact(disease="Marasmus_"))	
 
 
 	@Rule(Fact(action='find_disease'),Fact(slight_hair="yes"),Fact(reddish_hair="yes"),Fact(hair_falling="yes"),Fact(abnormal_skin="yes"),Fact(swollen_face="yes"),Fact(glazed_eyes="yes"),Fact(apathetic="yes"),Fact(smaller_muscles="yes"),Fact(anaemic="yes"),Fact(diarrhoea="yes"),Fact(bloated_stomach="yes"),Fact(thin_body="yes"),Fact(older_face="yes"),Fact(child_cranky="yes"),Fact(wrinkled_skin="yes"),Fact(little_fattie_tissue="yes"),Fact(converse_stomach_rib_prominent="yes"),Fact(chronic_infections="yes"),Fact(skin_reddish_purging="yes"),Fact(age="yes"))
-	def disease_7(self):
+	def disease_5(self):
 		self.declare(Fact(disease="Marasmus-Kwashiorkor_"))	
 
 
@@ -218,29 +220,29 @@ class Greetings(KnowledgeEngine):
 		print(treatments+"\n")
 
 	@Rule(Fact(action='find_disease'),
-		  Fact(slight_hair=MATCH.slight_hair),
-		  Fact(reddish_hair=MATCH.reddish_hair),
-		  Fact(hair_falling=MATCH.hair_falling),
-		  Fact(abnormal_skin=MATCH.abnormal_skin),
-		  Fact(swollen_face=MATCH.swollen_face),
-		  Fact(glazed_eyes=MATCH.glazed_eyes),
-		  Fact(apathetic=MATCH.apathetic),
-		  Fact(smaller_muscles=MATCH.smaller_muscles),
-		  Fact(anaemic=MATCH.anaemic),
-		  Fact(diarrhoea=MATCH.diarrhoea),
-		  Fact(bloated_stomach=MATCH.bloated_stomach),
-		  Fact(thin_body=MATCH.thin_body),
-		  Fact(older_face=MATCH.older_face),
-		  Fact(cranky_child=MATCH.cranky_child),
-		  Fact(wrinkled_skin=MATCH.wrinkled_skin),
-		  Fact(little_fattie_tissue=MATCH.little_fattie_tissue),
-		  Fact(converse_stomach_rib_prominent=MATCH.converse_stomach_rib_prominent),
-		  Fact(chronic_infections=MATCH.chronic_infections),
-		  Fact(skin_reddish_purging=MATCH.skin_reddish_purging),
-		  Fact(age=MATCH.age),NOT(Fact(disease=MATCH.disease)),salience = -999)
+		Fact(slight_hair=MATCH.slight_hair),
+		Fact(reddish_hair=MATCH.reddish_hair),
+		Fact(hair_falling=MATCH.hair_falling),
+		Fact(abnormal_skin=MATCH.abnormal_skin),
+		Fact(swollen_face=MATCH.swollen_face),
+		Fact(glazed_eyes=MATCH.glazed_eyes),
+		Fact(apathetic=MATCH.apathetic),
+		Fact(smaller_muscles=MATCH.smaller_muscles),
+		Fact(anaemic=MATCH.anaemic),
+		Fact(diarrhoea=MATCH.diarrhoea),
+		Fact(bloated_stomach=MATCH.bloated_stomach),
+		Fact(thin_body=MATCH.thin_body),
+		Fact(older_face=MATCH.older_face),
+		Fact(cranky_child=MATCH.cranky_child),
+		Fact(wrinkled_skin=MATCH.wrinkled_skin),
+		Fact(little_fattie_tissue=MATCH.little_fattie_tissue),
+		Fact(converse_stomach_rib_prominent=MATCH.converse_stomach_rib_prominent),
+		Fact(chronic_infections=MATCH.chronic_infections),
+		Fact(skin_reddish_purging=MATCH.skin_reddish_purging),
+		Fact(age=MATCH.age),NOT(Fact(disease=MATCH.disease)),salience = -999)
 
 		#   Fact(age=MATCH.age),
-		  
+		
 	def not_matched(self,slight_hair, reddish_hair, hair_falling, abnormal_skin, swollen_face, glazed_eyes, apathetic, smaller_muscles, anaemic ,diarrhoea ,bloated_stomach ,thin_body ,older_face, cranky_child ,wrinkled_skin ,little_fattie_tissue ,converse_stomach_rib_prominent ,chronic_infections, skin_reddish_purging, age):
 		print("\nDid not find any disease that matches your exact symptoms")
 		lis = [slight_hair, reddish_hair, hair_falling, abnormal_skin, swollen_face, glazed_eyes, apathetic, smaller_muscles,anaemic ,diarrhoea ,bloated_stomach ,thin_body ,older_face, wrinkled_skin, cranky_child, little_fattie_tissue, converse_stomach_rib_prominent, chronic_infections, skin_reddish_purging, age]
@@ -256,6 +258,8 @@ class Greetings(KnowledgeEngine):
 				max_count = count
 				max_disease = val
 		if_not_matched(max_disease)
+
+		
 
 if __name__ == "__main__":
 	preprocess()
