@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Alpha Malnutrition Testing Site </title>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css')}}" />
+		
+	</head>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header" class="alt">
+					<!-- <div >{{ userID }}</div> -->
+									
+					<h1><a href="{{ url_for('index') }}">Alpha</a> Malnutrition Details</h1>
+					<!-- <h1>Loggedin, {{ username }}</h1> -->
+					<nav id="nav">
+						
+						<ul>
+							<li><a href="{{ url_for('index') }}">Home</a></li>
+							<li><a href="{{ url_for('learn') }}">Learn-More</a></li>
+							<li><a href="{{ url_for('logout') }}" class="button">Logout: {{ userID }}</a></li>
+							
+						</ul>
+							
+
+					</nav>
+					
+				</header>
+
+			<!-- Banner -->
+				<section id="banner">
+					<h2>Alpha</h2>
+					<p>Malnutrition Testing Site For Children Under The Age Of 6.</p>
+					<ul class="actions special">
+						<!-- <li><a href="#" class="button primary">Sign Up</a></li> -->
+						<li><a href="{{ url_for('index') }}" class="button">Home</a></li>
+					</ul>
+				</section>
+
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+							<h2>EDIT TREATMENT DETAILS
+							<!-- <br />
+							of query -->
+							</h2>
+							
+						</header>
+
+
+						<ul class="actions fit">
+							<li><a href="{{ url_for('kwash') }}" class="button special fit">Load Kwashiorkor</a></li>
+							<li><a href="{{ url_for('marasmus') }}" class="button special fit">Load Marasmus</a></li>
+							<li><a href="{{ url_for('kwashmara') }}" class="button special fit">Load Marasmus-Kwashiorkor</a></li>
+						</ul>
+                    </section>
+                </section>  
+                              
+					
+                
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">Jephtah</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="static/assets/js/jquery.dropotron.min.js"></script>
+		<script src="static/assets/js/jquery.scrollex.min.js"></script>
+		<script src="static/assets/js/browser.min.js"></script>
+		<script src="static/assets/js/breakpoints.min.js"></script>
+		<script src="static/assets/js/util.js"></script>
+		<script src="static/assets/js/main.js"></script>
+
+		<script>
+			function loadFile() {
+				var file
+				var reader = new FileReader();
+				reader.onload = function (e) {
+					var textArea = document.getElementById("myTextArea");
+					textArea.value = e.target.result;
+				};
+				reader.readAsText(file);
+							}
+		</script>
+		<script>
+			function myFunction() {
+				window.location.href="{{ url_for('results') }}";
+			}
+		</script>	
+	</body>
+</html>
